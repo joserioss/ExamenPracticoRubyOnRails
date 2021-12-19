@@ -10,20 +10,32 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-  
-  <div class="actions">
-    <%= form.submit class:'btn btn-info'%>
-  </div>
+  <form>
+    <div class="form-group">
+      <div class="label">
+      <%= form.label :name %>
+      </div>
+      <div class="input">
+      <%= form.text_field :name %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="label">
+      <%= form.label :address %>
+      </div>
+      <div class="input">
+      <%= form.text_field :address %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="label">
+      <%= form.label :city %>
+      </div>
+      <div class="input">
+      <%= form.text_field :city %>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Building</button>
+  </form>
 <% end %>
