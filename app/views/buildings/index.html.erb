@@ -1,21 +1,33 @@
-<h1>Listado de Buildings</h1>
+<h1>Edificios</h1>
 <table>
   <thead>
     <tr>
-      <td>Nombre</td>
-      <td>Direccion</td>
-      <td>Ciudad</td>
-      <td>Departamentos</td>
+        <th style="border:1px solid black" >Name</th>
+        <th style="border:1px solid black">Address</th>
+        <th style="border:1px solid black">City</th>
+        <th colspan="4" style="border:1px solid black">Action</th>
     </tr>
   </thead>
   <tbody>
   <% @buildings.each do |building| %>
     <tr>
-      <td><%= building.name %></td>
-      <td><%= building.address %></td>
-      <td><%= building.city %></td>
-      <td><input class="my_class" id="my_id" value="New" type="submit" /></td>
+        <td style="border:1px solid black"><%= building.name %></td>
+        <td style="border:1px solid black"><%= building.address %></td>
+        <td style="border:1px solid black"><%= building.city %></td>
+        <td style="border:1px solid black"><%= link_to "Ver", building %></td>
     </tr>
   <% end %>  
   </tbody>
 </table>
+
+<%= link_to "Agregar Edificio", new_building_path %>
+
+<h2>Crea un nuevo edificio </h2>
+
+<form action="/buildings/" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="text" name="name">
+    <input type="text" name="address">
+    <input type="text" name="city">
+    <input type='submit' value='Create'>
+</form>
