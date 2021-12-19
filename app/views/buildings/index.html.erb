@@ -14,20 +14,10 @@
         <td style="border:1px solid black"><%= building.name %></td>
         <td style="border:1px solid black"><%= building.address %></td>
         <td style="border:1px solid black"><%= building.city %></td>
-        <td style="border:1px solid black"><%= link_to "Ver", building %></td>
+        <td style="border:1px solid black"><%= link_to "Ver", building %> (<%= building.apartments.count%> Dptos)</td>
     </tr>
   <% end %>  
   </tbody>
 </table>
 
-<%= link_to "Agregar Edificio", new_building_path %>
-
-<h2>Crea un nuevo edificio </h2>
-
-<form action="/buildings/" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="text" name="name">
-    <input type="text" name="address">
-    <input type="text" name="city">
-    <input type='submit' value='Create'>
-</form>
+<%= link_to "New Building", new_building_path %>
