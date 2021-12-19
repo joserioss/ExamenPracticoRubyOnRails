@@ -1,2 +1,21 @@
-<h1>Buildings#index</h1>
-<p>Find me in app/views/buildings/index.html.erb</p>
+<h1>Listado de Buildings</h1>
+<table>
+  <thead>
+    <tr>
+      <td>Nombre</td>
+      <td>Direccion</td>
+      <td>Ciudad</td>
+      <td>Departamentos</td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @buildings.each do |building| %>
+    <tr>
+      <td><%= building.name %></td>
+      <td><%= building.address %></td>
+      <td><%= building.city %></td>
+      <td><input class="my_class" id="my_id" value="New" type="submit" /></td>
+    </tr>
+  <% end %>  
+  </tbody>
+</table>
